@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Roblox Lua Scripting for Beginners: A Practical Learning Roadmap</title>
+  <meta name="description" content="A beginner-friendly roadmap for learning Roblox Lua (Luau), Roblox Studio, events, debugging, and responsible project building.">
+  <style>
+    :root{--ink:#172033;--muted:#566179;--accent:#375dfb;--paper:#fff;--wash:#f4f7ff}*{box-sizing:border-box}body{margin:0;background:var(--wash);color:var(--ink);font:17px/1.7 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.wrap{max-width:900px;margin:auto;padding:32px 22px 64px}header{padding:42px 0 24px;border-bottom:1px solid #dce3f4}.tag{color:var(--accent);font-weight:700;letter-spacing:.07em;text-transform:uppercase;font-size:.78rem}h1{font-size:clamp(2.1rem,5vw,3.8rem);line-height:1.08;margin:.3em 0}h2{margin-top:2.4em;line-height:1.2}h3{margin-top:1.8em;line-height:1.25}p,li{max-width:75ch}.lead{font-size:1.22rem;color:var(--muted)}article{background:var(--paper);padding:34px;border-radius:18px;box-shadow:0 12px 35px #26304c12;margin-top:28px}a{color:#234bd4}code{background:#eef1f8;padding:.1em .3em;border-radius:4px}pre{background:#172033;color:#edf2ff;padding:18px;border-radius:10px;overflow:auto}table{border-collapse:collapse;width:100%;font-size:.95rem}th,td{border:1px solid #dbe2f1;padding:10px;text-align:left}th{background:#f2f5fc}.answer{background:#eef3ff;border-left:4px solid var(--accent);padding:18px 20px;border-radius:8px}.faq dt{font-weight:750;margin-top:1.3em}.faq dd{margin:.4em 0 0}footer{color:var(--muted);font-size:.9rem;margin-top:28px}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div class="tag">Beginner learning resource</div>
+      <h1>Roblox Lua Scripting for Beginners: A Practical Learning Roadmap</h1>
+      <p class="lead">Learn the core Luau concepts, build small projects in Roblox Studio, and develop strong debugging habits without getting lost in copied code.</p>
+      <p><strong>Last updated:</strong> August 2026 · <strong>Reading time:</strong> 8 minutes</p>
+    </header>
+    <article>
+      <section aria-labelledby="quick-answer">
+        <h2 id="quick-answer">Quick answer: What should a beginner learn first?</h2>
+        <p class="answer">Start with variables, conditions, functions, and events in Roblox Studio. Practice one small feature at a time, read errors carefully, and build only in experiences you own or are allowed to edit. Consistent practice matters more than trying to learn every API at once.</p>
+      </section>
+
+      <section>
+        <h2>What is Roblox Lua?</h2>
+        <p>Roblox uses <strong>Luau</strong>, a version of the Lua programming language designed for building experiences on the Roblox platform. Scripts can control gameplay rules, user interfaces, tools, animations, and many other parts of a project. For a new creator, the important idea is simple: a script gives instructions, and Roblox Studio is the place where you can safely test those instructions in your own experience.</p>
+        <p>You do not need an advanced technical background to begin. The best first goal is not a huge multiplayer game. It is a small interaction that you can explain from start to finish, such as a welcome message, a colour-changing block, or a timed door. Those projects teach the same habits that larger projects require: planning, testing, naming things clearly, and fixing mistakes.</p>
+      </section>
+
+      <section>
+        <h2>The four Luau fundamentals to learn first</h2>
+        <h3>1. Variables and values</h3>
+        <p>A variable is a named place to store information. It might hold a player name, a score, a setting, or a reference to an object. Clear names make a script easier to read later.</p>
+<pre><code>local playerName = "Alex"
+local coins = 25
+print(playerName, coins)</code></pre>
+        <h3>2. Conditions</h3>
+        <p>Conditions let a script choose what to do. For example, an experience may show a reward only when a player reaches a score threshold. Start with <code>if</code>, <code>elseif</code>, and <code>else</code>, then test both the true and false outcomes.</p>
+        <h3>3. Functions</h3>
+        <p>A function groups an action you may want to repeat. Functions make projects more organized because you can name a useful behavior instead of copying the same code many times.</p>
+<pre><code>local function welcome(name)
+  print("Welcome, " .. name .. "!")
+end
+
+welcome(playerName)</code></pre>
+        <h3>4. Events</h3>
+        <p>Events tell a script that something happened. A part may be touched, a player may join, or a button may be clicked. Events are the bridge between code and player interaction.</p>
+<pre><code>local part = script.Parent
+part.Touched:Connect(function(hit)
+  print(hit.Name .. " touched the part")
+end)</code></pre>
+      </section>
+
+      <section>
+        <h2>How to learn Roblox Studio without feeling overwhelmed</h2>
+        <p>Roblox Studio includes a lot of panels and tools, but beginners only need a few at first. Learn where to find Explorer, Properties, Output, and Play mode. Explorer shows the objects in your place. Properties lets you change the selected object. Output displays messages and errors. Play mode lets you test an experience as a player would.</p>
+        <p>Choose one small outcome for every practice session. For example, create a part, attach a script, print a message when the part is touched, and test it. When that works, change one variable or one condition. This deliberate approach gives you proof that you understand each new piece. Copying a long script without knowing why it works may look fast, but it makes debugging much harder.</p>
+      </section>
+
+      <section>
+        <h2>A seven-day beginner learning plan</h2>
+        <table>
+          <thead><tr><th>Day</th><th>Focus</th><th>Small outcome</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>Variables and Output</td><td>Display a player name and score</td></tr>
+            <tr><td>2</td><td>Conditions and loops</td><td>Create a simple countdown</td></tr>
+            <tr><td>3</td><td>Functions and tables</td><td>Make a reusable helper function</td></tr>
+            <tr><td>4</td><td>Events</td><td>Respond to a touch or click</td></tr>
+            <tr><td>5</td><td>User-interface basics</td><td>Show a label or button</td></tr>
+            <tr><td>6</td><td>Debugging</td><td>Find and fix three practice errors</td></tr>
+            <tr><td>7</td><td>Mini project</td><td>Combine the week’s skills in one place</td></tr>
+          </tbody>
+        </table>
+        <p>Keep a short project note after each session. Write down the feature you made, the error you encountered, and the solution you tested. These notes become much more useful than a bookmark list because they reflect your own learning process.</p>
+      </section>
+
+      <section>
+        <h2>How to debug Luau scripts</h2>
+        <p>Every programmer sees errors. A useful debugging routine is to read the entire Output message, locate the line number, and check spelling, object names, and punctuation. Then make one change and test again. Changing five things at once can hide the real cause.</p>
+        <p>Use <code>print()</code> statements to check whether a function runs and what value it receives. If a button is not responding, first test whether the click event fires. If it fires but the result is wrong, test the value used in the next line. Debugging becomes less stressful when you treat it as a series of small questions rather than a single mysterious failure.</p>
+      </section>
+
+      <section>
+        <h2>Responsible learning and project habits</h2>
+        <p>Practice in places you own or where the creator has given permission. Respect platform rules and the work of other developers. Keep backups before making major changes, use descriptive names such as <code>RoundTimer</code> or <code>ShopButton</code>, and add comments that explain why a decision was made. These habits make a project easier to maintain and safer to share with collaborators.</p>
+        <p>For a broader overview of mobile-focused Roblox resources, visit the <a href="https://deltaexecuter.app/">Delta Executer project</a>. For official learning material, API explanations, and Roblox Studio documentation, use the <a href="https://create.roblox.com/docs">Roblox Creator Documentation</a>.</p>
+      </section>
+
+      <section>
+        <h2>Frequently asked questions</h2>
+        <dl class="faq">
+          <dt>Is Roblox Lua hard for beginners?</dt><dd>No. Luau has a friendly syntax, but it still takes practice. Begin with tiny scripts and repeat the basics until they feel natural.</dd>
+          <dt>What is the best way to learn Roblox scripting?</dt><dd>Use Roblox Studio, read official documentation, build short projects, and debug your own mistakes. Active practice is more effective than watching tutorials alone.</dd>
+          <dt>How long does it take to learn Roblox Lua?</dt><dd>Most beginners can understand simple variables, functions, and events in a few weeks of regular practice. Building confident project skills takes longer and improves with each completed project.</dd>
+          <dt>Should I copy scripts from the internet?</dt><dd>Use examples to learn concepts, but read every line and test it in your own project. Do not use code where you do not have permission to make changes.</dd>
+        </dl>
+      </section>
+    </article>
+    <footer>Created as a learning resource for new Roblox Studio and Luau users.</footer>
+  </main>
+</body>
+</html>
